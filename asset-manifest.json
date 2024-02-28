@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0fd5432d.css",
-    "main.js": "/static/js/main.5143a319.js",
-    "static/js/453.6da8758e.chunk.js": "/static/js/453.6da8758e.chunk.js",
-    "index.html": "/index.html",
-    "main.0fd5432d.css.map": "/static/css/main.0fd5432d.css.map",
-    "main.5143a319.js.map": "/static/js/main.5143a319.js.map",
-    "453.6da8758e.chunk.js.map": "/static/js/453.6da8758e.chunk.js.map"
+    "main.css": "/mudappFrontend/static/css/main.0fd5432d.css",
+    "main.js": "/mudappFrontend/static/js/main.19195a69.js",
+    "static/js/453.6da8758e.chunk.js": "/mudappFrontend/static/js/453.6da8758e.chunk.js",
+    "index.html": "/mudappFrontend/index.html",
+    "main.0fd5432d.css.map": "/mudappFrontend/static/css/main.0fd5432d.css.map",
+    "main.19195a69.js.map": "/mudappFrontend/static/js/main.19195a69.js.map",
+    "453.6da8758e.chunk.js.map": "/mudappFrontend/static/js/453.6da8758e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0fd5432d.css",
-    "static/js/main.5143a319.js"
+    "static/js/main.19195a69.js"
   ]
 }
