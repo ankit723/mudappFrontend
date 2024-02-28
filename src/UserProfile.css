@@ -1,0 +1,16 @@
+/* UserProfile.css */
+
+.UserProfile {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align content to the left */
+  }
+  
+  .ProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  

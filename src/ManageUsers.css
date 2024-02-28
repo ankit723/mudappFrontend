@@ -1,0 +1,66 @@
+/* ManageUsers.css */
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background-color: #0056b3;
+}
+
+.create-user-container {
+    margin-top: 20px;
+}
+
+.create-user-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.create-user-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-user-container button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-user-container button:hover {
+    background-color: #0056b3;
+}
