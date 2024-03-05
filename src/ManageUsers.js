@@ -11,11 +11,26 @@ function ManageUsers() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [authority, setAuthority] = useState("");
-    const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (user.payload.authority !== "master-admin") {
+        const userJSON = localStorage.getItem("user");
+        
+        if(userJSON) {
+            try {
+                const user = JSON.parse(userJSON);
+                
+                if(user.payload && user.payload.authority !== "master-admin") {
+                    navigate("/login");
+                }
+            } catch(error) {
+                console.error("Error parsing user data:", error);
+                // Handle error, e.g., redirect to login
+                navigate("/login");
+            }
+        } else {
+            // Handle case where user data is not found in local storage
+            // Redirect to login or handle as needed
             navigate("/login");
         }
         fetch("https://mudapp-backend.vercel.app/api/getAllUser", {
@@ -25,7 +40,7 @@ function ManageUsers() {
             .then((response) => response.json())
             .then((data) => { setUsers(data.users); console.log(data) })
             .catch((error) => console.error("Error fetching users:", error));
-    }, []);
+    }, [navigate]);
 
     const handleCreateUser = async (e) => {
         e.preventDefault();
@@ -59,6 +74,31 @@ function ManageUsers() {
         }
     };
 
+    const handleDelete=async(user)=>{
+        try {
+            const response = await fetch("https://mudapp-backend.vercel.app/api/removeUser", {
+                method: "POST",
+                mode: "cors",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user),
+            });
+
+            if (response.ok) {
+                alert("User Access Revoked")
+                window.location.reload()
+            } else {
+                window.alert("Deletion Failed");
+                console.error("Deletion failed");
+            }
+        } catch (error) {
+            // Handle network or other errors
+            window.alert("There is an internal problem");
+            console.error("Error during login:", error);
+        }
+    }
+
     return (
         <>
             <UserProfile />
@@ -76,7 +116,7 @@ function ManageUsers() {
                                     <div style={{ margin: "1rem 0", paddingRight: "1rem" }}>
                                         {user.email} - {user.authority}
                                     </div>
-                                    <button>Revoke Access</button>
+                                    <button onClick={()=>handleDelete(user)}>Revoke Access</button>
                                 </li>
                             )
                         })}

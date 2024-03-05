@@ -6,12 +6,28 @@ import { useNavigate } from "react-router-dom";
 
 function Admin(){
     const navigate=useNavigate()
-    const user = JSON.parse(localStorage.getItem("user"));
+
     useEffect(() => {
-        if (user.payload.authority != "master-admin") {
+        const userJSON = localStorage.getItem("user");
+        
+        if(userJSON) {
+            try {
+                const user = JSON.parse(userJSON);
+                
+                if(user.payload && user.payload.authority !== "master-admin") {
+                    navigate("/login");
+                }
+            } catch(error) {
+                console.error("Error parsing user data:", error);
+                // Handle error, e.g., redirect to login
+                navigate("/login");
+            }
+        } else {
+            // Handle case where user data is not found in local storage
+            // Redirect to login or handle as needed
             navigate("/login");
         }
-    }, []);
+    }, [navigate]);
     return(
         <>
         <UserProfile />
