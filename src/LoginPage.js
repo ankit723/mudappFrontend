@@ -1,8 +1,10 @@
 // LoginPage.js
 
 import React, { useState } from "react";
-import './Login.css'; // Import the CSS file
+import "./Login.css"; // Import the CSS file
 import { useNavigate } from "react-router-dom";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -16,8 +18,9 @@ function LoginPage() {
       navigate("/admin");
     } else {
       // Define the login endpoint of your backend API
-      const loginEndpoint = "https://mudapp-backend.vercel.app/api/loginUser";
 
+      const loginEndpoint = "http://localhost:9000/api/loginUser";
+      // const loginEndpoint = "https://mudapp-backend.vercel.app/api/loginUser";
       // Create a payload with user credentials
       const payload = {
         email,
@@ -28,7 +31,7 @@ function LoginPage() {
       // Make a POST request to the login endpoint
       fetch(loginEndpoint, {
         method: "POST",
-        mode:"cors",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
@@ -37,7 +40,7 @@ function LoginPage() {
         .then((response) => {
           if (response.ok) {
             // If the response is successful, store user data in local storage
-            alert(`Welcome ${payload.authority}`)
+            alert(`Welcome ${payload.authority}`);
             localStorage.setItem("user", JSON.stringify({ payload }));
 
             // Redirect to profile page after successful login
@@ -57,36 +60,41 @@ function LoginPage() {
 
   return (
     <div className="container">
-  <div className="login-container">
-    <h2>Login</h2>
-    <div className="input-group">
-      <input
-        type="text"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+      <div className="login-container">
+        <h2>Login</h2>
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="input-group">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="Authority"
+            value={authority}
+            onChange={(e) => setAuthority(e.target.value)}
+          />
+        </div>
+        <Button
+          className="btn-primary"
+          variant="contained"
+          onClick={handleLogin}
+        >
+          Login
+        </Button>
+      </div>
     </div>
-    <div className="input-group">
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-    </div>
-    <div className="input-group">
-      <input
-        type="text"
-        placeholder="Authority"
-        value={authority}
-        onChange={(e) => setAuthority(e.target.value)}
-      />
-    </div>
-    <button className="btn-primary" onClick={handleLogin}>Login</button>
-  </div>
-</div>
-
   );
 }
 

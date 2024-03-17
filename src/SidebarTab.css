@@ -1,11 +1,10 @@
 /* SidebarTab.css */
 
 .SidebarTab {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .SidebarTab:hover {
-    background-color: #ddd;
-  }
-  
+  padding: 20px;
+  cursor: pointer;
+}
+
+.SidebarTab:hover {
+  background-color: #ddd;
+}

@@ -14,7 +14,6 @@ function App() {
         <Route path="/" element={<Admin />} />
         <Route path="/:admin" element={<Admin />} />
         <Route path="/manage-users" element={<ManageUsers />} />
-        {/* <Route path="/:path*" element={<Admin />} /> */}
       </Routes>
     </Router>
   );

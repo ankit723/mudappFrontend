@@ -1,14 +1,35 @@
 /* SideNavbar.css */
 
 .SideNavbar {
-    width: 250px;
-    /* Increase the width */
-    background-color: #f0f0f0;
+    width: 15vw;
+    background-color: white !important;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    height: 200vh;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 30px 60px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: -10px;
+    margin-left: 20px;
+    padding: 0 2rem;
+    padding-top: 0.5rem;
 }
+
+.SideNavbar:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 
 .SideNavbar ul {
     list-style-type: none;
@@ -29,4 +50,25 @@
 
 .SidebarTab:hover {
     background-color: #ddd;
+}
+
+.all-users {
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 30px 60px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.all-users:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.user-element:hover {
+    opacity: 0.5;
 }
