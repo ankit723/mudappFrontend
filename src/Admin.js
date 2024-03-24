@@ -841,7 +841,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData);
+                setUsers(jsonData.users);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -1258,7 +1258,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData);
+                setUsers(jsonData.contents);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -1688,7 +1688,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData);
+                setUsers(jsonData.contents);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
