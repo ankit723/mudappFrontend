@@ -8,8 +8,8 @@ import Element from "./element";
 function Admin() {
     const navigate = useNavigate();
     let { admin } = useParams();
-    const loginEndpoint = "http://localhost:9000/api/";
-    // const loginEndpoint = "https://mudapp-backend.vercel.app/api/totalRegisteredUser";
+    // const loginEndpoint = "http://localhost:9000/api/";
+    const loginEndpoint = "https://mudappbackend-1.onrender.com/api";
     console.log(admin);
 
     useEffect(() => {
@@ -242,7 +242,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData);
+                setUsers(jsonData.users);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -510,7 +510,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData);
+                setUsers(jsonData.users);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -597,7 +597,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setAvgTime(jsonData);
+                setAvgTime(jsonData.avgTime);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -1269,14 +1269,14 @@ function Admin() {
         } else {
             limitedUsers = users;
         }
-        const handleBlock=(postId)=>{
+        const handleBlock = (postId) => {
             fetch(`${loginEndpoint}/blockContent`, {
-                method:"POST",
-                mode:"cors",
+                method: "POST",
+                mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body:{"contentId":postId}
+                body: { "contentId": postId }
             })
         }
         return (
@@ -1305,28 +1305,29 @@ function Admin() {
                         }}
                     >
                         {limitedUsers.map((user) => {
-                            if(!user.block){
-                            return (
-                                <div
-                                    className="user-element"
-                                    key={user.id}
-                                    style={{ display: "flex", alignItems: "center" }}
-                                    onClick={() => handleOpenElement(user, "post")}
-                                >
-                                    <img
-                                        src={user.postImage}
-                                        alt="profile photo"
-                                        style={{
-                                            marginRight: "0.5rem",
-                                            width: "50px",
-                                            height: "50px",
-                                            borderRadius: "50%",
-                                        }}
-                                    />
-                                    <span>Topic: {user.headline}</span>
-                                    <button onClick={() => handleBlock(user.postId)} style={{ marginLeft: "2rem" }}>Block Post</button>
-                                </div>
-                            )}
+                            if (!user.block) {
+                                return (
+                                    <div
+                                        className="user-element"
+                                        key={user.id}
+                                        style={{ display: "flex", alignItems: "center" }}
+                                        onClick={() => handleOpenElement(user, "post")}
+                                    >
+                                        <img
+                                            src={user.postImage}
+                                            alt="profile photo"
+                                            style={{
+                                                marginRight: "0.5rem",
+                                                width: "50px",
+                                                height: "50px",
+                                                borderRadius: "50%",
+                                            }}
+                                        />
+                                        <span>Topic: {user.headline}</span>
+                                        <button onClick={() => handleBlock(user.postId)} style={{ marginLeft: "2rem" }}>Block Post</button>
+                                    </div>
+                                )
+                            }
                         })}
                     </div>
                     <p
@@ -1698,14 +1699,14 @@ function Admin() {
         } else {
             limitedUsers = users;
         }
-        const handleUnBlock=(postId)=>{
+        const handleUnBlock = (postId) => {
             fetch(`${loginEndpoint}/unBlockContent`, {
-                method:"POST",
-                mode:"cors",
+                method: "POST",
+                mode: "cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body:{"contentId":postId}
+                body: { "contentId": postId }
             })
         }
         return (
@@ -1772,16 +1773,16 @@ function Admin() {
         return (
             <div className="dashboard">
                 <div className="" style={{ display: "flex" }}>
-                    <TotalUsers count={"10"} />
-                    <RealTimeUsers count={"10"} />
+                    <TotalUsers count={"1"} />
+                    <RealTimeUsers count={"1"} />
                 </div>
                 <div className="" style={{ display: "flex" }}>
                     <AvgScreenTime />
-                    <ContentWriters count={"10"} />
+                    <ContentWriters count={"1"} />
                 </div>
                 <div className="" style={{ display: "flex" }}>
-                    <AllPost count={"10"} />
-                    <BlockedContents count={"10"} />
+                    <AllPost count={"0"} />
+                    <BlockedContents count={"1"} />
                 </div>
             </div>
         );

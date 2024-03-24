@@ -33,7 +33,7 @@ function ManageUsers() {
             // Redirect to login or handle as needed
             navigate("/login");
         }
-        fetch("https://mudapp-backend.vercel.app/api/getAllUser", {
+        fetch("https://mudappbackend-1.onrender.com/api/getAllUser", {
             method: "GET",
             mode: "cors"
         })
@@ -51,7 +51,7 @@ function ManageUsers() {
         };
 
         try {
-            const response = await fetch("https://mudapp-backend.vercel.app/api/registerNewUser", {
+            const response = await fetch("https://mudappbackend-1.onrender.com/api/registerNewUser", {
                 method: "POST",
                 mode: "cors",
                 headers: {
@@ -76,7 +76,7 @@ function ManageUsers() {
 
     const handleDelete=async(user)=>{
         try {
-            const response = await fetch("https://mudapp-backend.vercel.app/api/removeUser", {
+            const response = await fetch("https://mudappbackend-1.onrender.com/api/removeUser", {
                 method: "POST",
                 mode: "cors",
                 headers: {

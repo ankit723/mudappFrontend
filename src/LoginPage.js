@@ -19,8 +19,8 @@ function LoginPage() {
     } else {
       // Define the login endpoint of your backend API
 
-      const loginEndpoint = "http://localhost:9000/api/loginUser";
-      // const loginEndpoint = "https://mudapp-backend.vercel.app/api/loginUser";
+      // const loginEndpoint = "http://localhost:9000/api/loginUser";
+      const loginEndpoint = "https://mudappbackend-1.onrender.com/api/loginUser";
       // Create a payload with user credentials
       const payload = {
         email,
