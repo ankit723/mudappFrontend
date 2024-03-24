@@ -15,7 +15,7 @@ function LoginPage() {
   const handleLogin = () => {
     if (email == "admin" && password == "masterAdmin") {
       localStorage.setItem("user", JSON.stringify({ email }));
-      navigate("/admin");
+      navigate("/dashboard");
     } else {
       // Define the login endpoint of your backend API
 

@@ -12,8 +12,9 @@ function SideNavbar() {
     { id: 1, name: "Total Registered User", url: "totalRegisteredUsers" }, //done
     { id: 2, name: "Real-Time User", url: "realTimeUsers" }, //done
     { id: 3, name: "Content Writer", url: "maximumContentWriter" }, //done
-    { id: 4, name: "Blocked Content", url: "listOfBlockedContent" },
-    { id: 5, name: "Collect Email IDs", url: "collectEmailIDs" },
+    { id: 4, name: "All Posts", url: "allPosts" }, //done
+    { id: 5, name: "Blocked Content", url: "listOfBlockedContent" }, //done
+    { id: 6, name: "Collect Email IDs", url: "collectEmailIDs" },
   ];
 
   return (
