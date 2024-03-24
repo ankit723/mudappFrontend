@@ -8,7 +8,7 @@ import Element from "./element";
 function Admin() {
     const navigate = useNavigate();
     let { admin } = useParams();
-    // const loginEndpoint = "http://localhost:9000/api/";
+    // const loginEndpoint = "http://localhost:9000/api";
     const loginEndpoint = "https://mudappbackend-1.onrender.com/api";
     console.log(admin);
 
@@ -841,7 +841,7 @@ function Admin() {
             })
             .then((jsonData) => {
                 // Update state with fetched data
-                setUsers(jsonData.users);
+                setUsers(jsonData.users[0]);
             })
             .catch((err) => {
                 console.log("Error getting all registered users", err);
@@ -1279,6 +1279,7 @@ function Admin() {
                 body: { "contentId": postId }
             })
         }
+        console.log(limitedUsers)
         return (
             <>
                 <div
@@ -1781,7 +1782,7 @@ function Admin() {
                     <ContentWriters count={"1"} />
                 </div>
                 <div className="" style={{ display: "flex" }}>
-                    <AllPost count={"0"} />
+                    <AllPost count={"1"} />
                     <BlockedContents count={"1"} />
                 </div>
             </div>
