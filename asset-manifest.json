@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mudappFrontend/static/css/main.5bde7cda.css",
-    "main.js": "/mudappFrontend/static/js/main.25fedaed.js",
+    "main.js": "/mudappFrontend/static/js/main.1e7776a1.js",
     "static/js/453.6da8758e.chunk.js": "/mudappFrontend/static/js/453.6da8758e.chunk.js",
     "index.html": "/mudappFrontend/index.html",
     "main.5bde7cda.css.map": "/mudappFrontend/static/css/main.5bde7cda.css.map",
-    "main.25fedaed.js.map": "/mudappFrontend/static/js/main.25fedaed.js.map",
+    "main.1e7776a1.js.map": "/mudappFrontend/static/js/main.1e7776a1.js.map",
     "453.6da8758e.chunk.js.map": "/mudappFrontend/static/js/453.6da8758e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5bde7cda.css",
-    "static/js/main.25fedaed.js"
+    "static/js/main.1e7776a1.js"
   ]
 }
